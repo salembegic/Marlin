@@ -42,7 +42,7 @@
 // EEPROM
 //
 #if NO_EEPROM_SELECTED
-  #define I2C_EEPROM                            // EEPROM on I2C-0
+  #define I2C_EEPROM                              // EEPROM on I2C-0  //SALEM BEGIC
   //#define SDCARD_EEPROM_EMULATION
   //#undef NO_EEPROM_SELECTED
 #endif
@@ -157,7 +157,7 @@
 // Power Loss Detection
 //
 #ifndef POWER_LOSS_PIN
-  #define POWER_LOSS_PIN                   P1_25  // PWRDET
+  #define POWER_LOSS_PIN                   P1_25  // PWRDET  //SALEM BEGIC
 #endif
 
 //
