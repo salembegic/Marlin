@@ -23,7 +23,7 @@
 //#error "Don't build with import-2.1.x configurations!"
 //#error "Use the 'bugfix...' or 'release...' configurations matching your Marlin version."
 
-#define MOTHERBOARD BOARD_BTT_SKR_V1_4  // Uncomment for the V1.4 board, otherwise V2.0 is assumed  //SALEM BEGIC
+#define MOTHERBOARD BOARD_BTT_SKR_V1_4  // Uncomment for the V1.4 board, otherwise V2.0 is assumed  //SB
 
 /**
  * Configuration.h
@@ -65,7 +65,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(SALEM BEGIC, BIQU B1)" // Original author or contributor.
+#define STRING_CONFIG_H_AUTHOR "(SB, BIQU B1)" // Original author or contributor.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
@@ -162,7 +162,7 @@
 #define Z_DRIVER_TYPE  TMC2208  // TMC2225
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-#define Z2_DRIVER_TYPE TMC2208  // TMC2225  //SALEM BEGIC
+#define Z2_DRIVER_TYPE TMC2208  // TMC2225  //SB
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
@@ -411,14 +411,14 @@
  * Enable and connect the power supply to the PS_ON_PIN.
  * Specify whether the power supply is active HIGH or active LOW.
  */
-#define PSU_CONTROL  //SALEM BEGIC
-#define PSU_NAME "Power Supply"  //SALEM BEGIC
+#define PSU_CONTROL  //SB
+#define PSU_NAME "Power Supply"  //SB
 
 #if ENABLED(PSU_CONTROL)
   //#define MKS_PWC                 // Using the MKS PWC add-on
   //#define PS_OFF_CONFIRM          // Confirm dialog when power off
   //#define PS_OFF_SOUND            // Beep 1s when power off
-  #define PSU_ACTIVE_STATE HIGH     // Set 'LOW' for ATX, 'HIGH' for X-Box  //SALEM BEGIC
+  #define PSU_ACTIVE_STATE HIGH     // Set 'LOW' for ATX, 'HIGH' for X-Box  //SB
 
   //#define PSU_DEFAULT_OFF             // Keep power off until enabled directly with M80
   //#define PSU_POWERUP_DELAY      250  // (ms) Delay for the PSU to warm up to full power
@@ -1246,7 +1246,7 @@
 #define V_MAX_ENDSTOP_HIT_STATE HIGH
 #define W_MIN_ENDSTOP_HIT_STATE HIGH
 #define W_MAX_ENDSTOP_HIT_STATE HIGH
-#define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW  //SALEM BEGIC
+#define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW  //SB
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
@@ -1413,7 +1413,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-#define USE_PROBE_FOR_Z_HOMING  //SALEM BEGIC
+#define USE_PROBE_FOR_Z_HOMING  //SB
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1522,7 +1522,7 @@
  * With FT_MOTION requires ENDSTOP_INTERRUPTS_FEATURE
  */
 //#define BIQU_MICROPROBE_V1  // Triggers HIGH
-#define BIQU_MICROPROBE_V2  // Triggers LOW  //SALEM BEGIC
+#define BIQU_MICROPROBE_V2  // Triggers LOW  //SB
 
 // A probe that is deployed and stowed with a solenoid pin (SOL1_PIN)
 //#define SOLENOID_PROBE
@@ -1700,7 +1700,7 @@
  * Probe Enable / Disable
  * The probe only provides a triggered signal when enabled.
  */
-#define PROBE_ENABLE_DISABLE  //SALEM BEGIC
+#define PROBE_ENABLE_DISABLE  //SB
 #if ENABLED(PROBE_ENABLE_DISABLE)
   //#define PROBE_ENABLE_PIN P2_00   // Override the default pin here
 #endif
@@ -1714,7 +1714,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-#define MULTIPLE_PROBING 2  //SALEM BEGIC					 
+#define MULTIPLE_PROBING 2  //SB					 
 //#define EXTRA_PROBING    1
 
 /**
@@ -1748,7 +1748,7 @@
 //#define PROBE_OFFSET_ZMAX  20   // (mm)
 
 // Enable the M48 repeatability test to test probe accuracy
-#define Z_MIN_PROBE_REPEATABILITY_TEST  //SALEM BEGIC
+#define Z_MIN_PROBE_REPEATABILITY_TEST  //SB
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -2114,7 +2114,7 @@
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
-#define AUTO_BED_LEVELING_BILINEAR  //SALEM BEGIC
+#define AUTO_BED_LEVELING_BILINEAR  //SB
 
 /**
  * Commands to execute at the end of G29 probing.
@@ -2144,7 +2144,7 @@
  * Turn on with the command 'M111 S32'.
  * NOTE: Requires a lot of flash!
  */
-//#define DEBUG_LEVELING_FEATURE
+#define DEBUG_LEVELING_FEATURE //SB TEMP
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL, PROBE_MANUALLY)
   // Set a height for the start of manual adjustment
@@ -2179,7 +2179,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  #define G26_MESH_VALIDATION  //SALEM BEGIC
+  #define G26_MESH_VALIDATION  //SB
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for G26.
@@ -2195,7 +2195,7 @@
 #if ANY(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 15  //SALEM BEGIC
+  #define GRID_MAX_POINTS_X 15  //SB
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -2348,7 +2348,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-#define Z_SAFE_HOMING  //SALEM BEGIC
+#define Z_SAFE_HOMING  //SB
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // (mm) X point for Z homing
